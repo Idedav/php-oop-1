@@ -1,0 +1,12 @@
+body{
+    background-color: rgba(0, 0, 0, 0.866);
+    color: red;
+}
+
+.dc-card img{
+    height: 70%;
+}
+
+.dc-card .card-body{
+    height: 30%;
+}

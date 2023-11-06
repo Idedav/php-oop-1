@@ -1,40 +1,45 @@
 <?php 
 
-    class Media{
-        public $file_name;
-        public $name;
-        public $type = "image";
+    require_once __DIR__ . '/movie.php';
+    require_once __DIR__ . '/media.php';
+    require_once __DIR__ . '/db/db.php';
 
-        public function __construct($_file_name, $_name){
-            $this->file_name = $_file_name;
-            $this->name = $_name;
-        }
-    }
-
-    class Movie {
-        public $name;
-        public $original_name;
-        public $gen;
-        public $duration;
-        public $image;
-
-        public function setImage(Media $_image){
-            $this->image = $_image;
-        }
-
-        public function __construct( string $_name, string $_original_name, array $_gen, int $_duration, Media $_image = null){
-            $this->name = $_name;
-            $this->original_name = $_original_name;
-            $this->gen = $_gen;
-            $this->duration = $_duration;
-            $this->image = $_image;
-        }
-    }
-
-    $movies = [
-        new Movie('Il Labirinto', 'Maze Runner', ['Azione'], 120, new Media('maze_runner.jpg', 'Maze Runner')),
-        new Movie('Barbie', 'Barbie', ['Commedia'], 90, new Media('barbie.jpg', 'Barbie'))
-    ];
-
-    var_dump($movies);
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Films oop</title>
+</head>
+<body>
+    
+    <div class="container my-5">
+        <h1 class="text-center">Movies oop</h1>
+
+        <div class="container d-flex flex-wrap justify-content-center my-5">
+
+        <?php foreach($movies as $movie): ?>
+
+        <div class="card m-3 dc-card" style="width: 18rem;">
+            <img src="img/<?php echo $movie->image?->file_name ?? 'nondisponibile.png' ?>" class="card-img-top" alt="<?php echo $movie->image?->name ?? '' ?>">
+            <div class="card-body">
+                <h4 class="card-title"><?php  echo $movie->name === $movie->original_name ? $movie->name :  $movie->name . ' - ' . $movie->original_name?></h4>
+                <p class="card-text">Categorie: <?php echo implode(' - ', $movie->gen) ?></p>
+                <p class="card-text">Durata: <?php echo $movie->duration ?> min</p>
+            </div>
+        </div>
+
+        <?php endforeach; ?>
+
+        </div>
+    </div>
+
+</body>
+</html>
