@@ -10,3 +10,8 @@ body{
 .dc-card .card-body{
     height: 30%;
 }
+
+.dc-card{
+    height: 700px;
+    padding-bottom: 10px;
+}

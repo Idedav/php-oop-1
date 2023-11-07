@@ -78,6 +78,71 @@
             2022,
             177,
             11            
+        ),
+        new TvSerie(
+            "L'attacco dei giganti",
+            '進撃の巨人', 
+            ['Anime','Azione'],
+            new Media(
+                'aot.jpg',
+                'Attacco dei giganti'
+            ),
+            2013,
+            2023,
+            87,
+            4            
+        ),
+        new TvSerie(
+            'You',
+            'You', 
+            ['Thriller'],
+            new Media(
+                'you.jpg',
+                'You'
+            ),
+            2018,
+            2023,
+            40,
+            4            
+        ),
+        new TvSerie(
+            'Lupin',
+            'Lupin', 
+            ['Mistero'],
+            new Media(
+                'lupin.jpg',
+                'Lupin'
+            ),
+            2021,
+            2023,
+            17,
+            3            
+        ),
+        new TvSerie(
+            'Death Note',
+            'デスノート', 
+            ['Anime', 'Psicologico'],
+            new Media(
+                'deathnote.webp',
+                'Death Note'
+            ),
+            2006,
+            2007,
+            36,
+            1            
+        ),
+        new TvSerie(
+            'Orange Is the New Black',
+            'Orange Is the New Black', 
+            ['Drammatico'],
+            new Media(
+                'onb.jpg',
+                'Orange Is the New Black'
+            ),
+            2013,
+            2019,
+            91,
+            7            
         )
     ];
 
