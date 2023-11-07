@@ -1,19 +1,18 @@
 <?php 
 
-    class Movie {
-        public $name;
-        public $original_name;
-        public $gen;
+    class Movie extends Production {
+        public $published_year;
         public $duration;
-        public $image;
 
-        public function __construct( string $_name, string $_original_name, array $_gen, int $_duration, Media $_image = null){
-            $this->name = $_name;
-            $this->original_name = $_original_name;
-            $this->gen = $_gen;
+        public function __construct(string $_name, string $_original_name, array $_gen, Media $_image = null, string $_published_year, int $_duration){
+            
+            parent::__construct($_name, $_original_name, $_gen, $_image);
+
+            $this->published_year = $_published_year;
             $this->duration = $_duration;
-            $this->image = $_image;
+
         }
+
     }
 
 ?>
