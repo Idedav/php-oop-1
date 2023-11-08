@@ -1,11 +1,14 @@
 <?php 
-    
-    require_once __DIR__ . '/trait/publishedYear.php';
-    require_once __DIR__ . '/production.php';
-    require_once __DIR__ . '/tvserie.php';
-    require_once __DIR__ . '/movie.php';
-    require_once __DIR__ . '/media.php';
-    require_once __DIR__ . '/db/db.php';
+    try{
+        require_once __DIR__ . '/trait/publishedYear.php';
+        require_once __DIR__ . '/production.php';
+        require_once __DIR__ . '/tvserie.php';
+        require_once __DIR__ . '/movie.php';
+        require_once __DIR__ . '/media.php';
+        require_once __DIR__ . '/db/db.php';
+    }catch(Exception $e) {
+        $e;
+    }
 
 ?>
 
@@ -27,6 +30,12 @@
         <h1 class="text-center">Productions oop</h1>
 
         <div class="container d-flex flex-wrap justify-content-center my-5">
+
+        <?php if(isset($e)): ?>
+            <div class="alert alert-danger" role="alert">
+                <?php echo $e->getMessage(); ?>
+            </div>
+        <?php else: ?>
 
         <?php foreach($productions as $production): ?>
 
@@ -64,6 +73,7 @@
         <?php endforeach; ?>
 
         </div>
+        <?php endif; ?>
     </div>
 
 </body>
