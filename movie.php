@@ -1,8 +1,9 @@
 <?php 
 
     class Movie extends Production {
-        public $published_year;
         public $duration;
+
+        use PublishedYear;
 
         public function __construct(string $_name, string $_original_name, array $_gen, Media $_image = null, int $_published_year, int $_duration){
             

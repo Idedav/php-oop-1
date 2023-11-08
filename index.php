@@ -1,4 +1,6 @@
 <?php 
+    
+    require_once __DIR__ . '/trait/publishedYear.php';
     require_once __DIR__ . '/production.php';
     require_once __DIR__ . '/tvserie.php';
     require_once __DIR__ . '/movie.php';
@@ -47,7 +49,7 @@
 
                 <?php else: ?>
                     <!-- ISTANZE TVSERIE -->
-                        <span class="card-text"><strong>Prima puntata:</strong> <?php echo $production->aired_from_year ?></span>
+                        <span class="card-text"><strong>Prima puntata:</strong> <?php echo $production->published_year ?></span>
                         <span class="card-text"><strong>Puntata finale:</strong> <?php echo $production->aired_to_year ?></span>
                         <span class="card-text"><strong>Numero di episodi:</strong> <?php echo $production->number_of_episodes ?></span>
                         <span class="card-text"><strong>Numero di stagioni:</strong> <?php echo $production->number_of_seasons ?></span>
